@@ -1,0 +1,23 @@
+Promblem 3: Analysis of Inversion using Merge sort & Brute force technique
+
+1) Theoritical analysis:
+
+1.1) For an array of size n, time taken to find number of inversions suing Brute force is O(n^2).
+1.2) For an array of size n, time taken to find number of inversions using Merge SOrt os O(n.lgn).
+
+2) Observation Table:
+
+Input vector size (n)			No. of swaps			Time taken by Brute			Time taken by Merge
+
+	10					3				23.99					16.57
+	100				     	470				46.788					27.792
+	1000					47435				1892.54					197.716
+	10000					4819793				746232					2985.03
+	100000					482341314			8635875					101514
+
+Observation & Conclusion:
+
+Its been observed that number of swaps are same(trivial) and the time taken to count inversions are lesser for merge technique as compared to brute force, hence proving that our priori and expermental analysis are in sync.
+
+Also, by observing the Time taken for Merge it can clearly concluded that the time rises in a linearly steady fashion showing that the time behaves as a function of c.n.lgn+k.
+

@@ -1,0 +1,23 @@
+Problem 7: Comapring Problem 4,5,6.
+
+Note: all the quick sort routines - hoare, lumuto, probabilistic & Median of 3 gives TC in O(n.lgn).
+
+Observation Table:
+
+4 different vectors of same size is being alloted to each quick sort routine. The size of vectors are varied to obtained unique observations.
+
+Input 		Hoare partition		Lumuto partition		Median of three partition	Random partition
+
+10			3			2			5				7
+100			40			38			83				92
+1000			496			768			1007				856
+10000			4528			28356			29875				26587
+
+
+Conclusion: For a random array, Hoare partition is best suited as it consumes less time, reason being the number of swaps is less in it.
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+Problem 4: Comparison of Hoare & Lumuto Quick Sort.
+
+Observation Table:
+
+Index: Hoare Quick sort (H)
+       Lumuto Quick sort (L)
+
+
+Vector size (n)		Swaps in H		Swaps in L		Time taken by H			Time taken by L
+     
+	2048		5204			29681			1068.19				1872.98
+	3048		7831			87639			1776.16				4649.69
+	4048		10516			155136			2353.13				10620.3
+	5048		13309			229444			2975.5				12870.5
+
+Calculations:
+
+1) 1872.98/1068.19=1.75
+2) 4649.69/1776.16=2.61
+3) 10620.3/2353.13=4.15
+4) 12870.5/2975.5= 4.32
+
+
+Conclusion:
+
+Its being observed that swaps in Hoare is less tha swaps in Lumuto also time taken to sort by Hoare is less than Lumuto which is direct consequences of the number of swaps in both the cases.
+
+One fine observation has been made that if we divide the time taken by Lumuto by Hoare over a span of very fine intervals i.e 1000, we observe that the division operation grows steadily as the intervals progressed. Hence it may follow some logarithmic function.

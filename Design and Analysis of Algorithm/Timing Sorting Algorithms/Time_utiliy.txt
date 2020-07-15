@@ -1,0 +1,80 @@
+Problem 3: Comparing Timing Utilities (Chrono and Timeval Structure)
+
+OS - Ubuntu 18.04 LTS
+Compiler - GNU g++ COmpiler
+Processor: Intel core i5 : 8th Gen 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Chrono:
+
+Chrono uses the header <chrono> and <ctime.h>. The chrono timer measure the elapsed time since Jan 1, 1970, 00:00:00 (epoch of Linux) and the timestamp created by user wich is given by auto variable_name = std::chrono::system_clock::now(), where system_clock represents the clock used by the system in which program is running.
+
+Basically the duration between epoch and timestamp is mesured using the number of ticks. The ticka cans have unit like seconds, some fraction of seconda dn etc. If i say that 4 ticks with unit of 1 seconds is equivalent to 4 seconds.
+
+Now to time a fucntion we create 2 timestamps namely:
+
+auto variable_name1 = std::chrono::system_clock::now()
+
+FUNCTION CALL
+
+auto variable_name2 = std::chrono::system_clock::now()
+
+Total time taken by function to run is mesured by taking dfference of variable_name1 and variable_name2.
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Timeval Structure:
+
+
+Timeval is defined as:
+
+typedef struct timeval
+{
+
+long tv_sec;
+long tv_usec;
+
+}timeval;
+
+Two varibales of this structure var1 and var2 are created which will be used as argument for gettimeofday function.
+
+tv_sec and tv_usec are the members of timeval structure which are used to give time in second and microsecond unit respectiveley.
+
+
+
+gettimeofday(&var1,NULL)
+
+
+gettimeofday takes two arguments, one is the variable of timeval and other is the timezone.
+
+The processor has a register called timestamp counter which is continously updated after each tick. The number of ticks are mesured with reference to the time when the system clock wa set last time. The number of ticks determine the time elapsed since then.
+
+
+
+gettimeofday(&var1,NULL);
+
+FUNCTION CALL
+
+gettimeofday(&var2,NULL);
+
+When we substract the two timestamps we get the total time for which the function is executed.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Observation & Conclusion:
+
+For timing the program, both Chrono and Timeval is used.
+It is observed that the time difference given by chrono and timeval are different.
+
+The reason may arise from the fact that both have different epoch. i.e the reference time is different for both timeval and chrono.
+
+I belive that chrono shall be used as it has a high resolution clock option which gives highly resolved time difference.Hence for applications which require high precision, chroni shall be used.
+
+
+
